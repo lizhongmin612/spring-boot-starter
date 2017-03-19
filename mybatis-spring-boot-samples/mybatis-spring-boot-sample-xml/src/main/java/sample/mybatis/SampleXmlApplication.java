@@ -15,6 +15,7 @@
  */
 package sample.mybatis;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import sample.mybatis.dao.CityDao;
 import sample.mybatis.mapper.HotelMapper;
 
@@ -29,14 +30,16 @@ public class SampleXmlApplication implements CommandLineRunner {
 		SpringApplication.run(SampleXmlApplication.class, args);
 	}
 
-	private final CityDao cityDao;
+	@Autowired
+	private CityDao cityDao;
 
-	private final HotelMapper hotelMapper;
+	@Autowired
+	private HotelMapper hotelMapper;
 
-	public SampleXmlApplication(CityDao cityDao, HotelMapper hotelMapper) {
-		this.cityDao = cityDao;
-		this.hotelMapper = hotelMapper;
-	}
+//	public SampleXmlApplication(CityDao cityDao, HotelMapper hotelMapper) {
+//		this.cityDao = cityDao;
+//		this.hotelMapper = hotelMapper;
+//	}
 
 	@Override
 	public void run(String... args) throws Exception {

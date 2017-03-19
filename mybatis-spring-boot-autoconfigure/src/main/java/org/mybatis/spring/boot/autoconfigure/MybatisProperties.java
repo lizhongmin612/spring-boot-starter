@@ -26,9 +26,11 @@ import org.apache.ibatis.session.ExecutorType;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.stereotype.Component;
 
 /**
  * Configuration properties for MyBatis.
@@ -36,8 +38,10 @@ import org.springframework.core.io.support.ResourcePatternResolver;
  * @author Eddú Meléndez
  * @author Kazuki Shimizu
  */
+@Component
+@PropertySource("classpath:mybatis.properties") //指定配置文件位置
 @ConfigurationProperties(prefix = MybatisProperties.MYBATIS_PREFIX)
-public class MybatisProperties {
+public class  MybatisProperties {
 
   public static final String MYBATIS_PREFIX = "mybatis";
 

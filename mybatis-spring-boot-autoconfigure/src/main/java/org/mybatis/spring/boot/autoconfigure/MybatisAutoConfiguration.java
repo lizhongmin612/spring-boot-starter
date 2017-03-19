@@ -80,7 +80,6 @@ import org.springframework.util.StringUtils;
 public class MybatisAutoConfiguration {
 
   private static final Logger logger = LoggerFactory.getLogger(MybatisAutoConfiguration.class);
-
   private final MybatisProperties properties;
 
   private final Interceptor[] interceptors;
